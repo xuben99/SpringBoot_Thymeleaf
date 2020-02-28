@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" >
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>地址</th>
+        <th>年龄</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.userid}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.useraddress}"></td>
+        <td th:text="${user.userage}"></td>
+        <td ><a th:href="'edit?userid=' + ${user.userid}">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+             <a th:href="'delete?userid='+ ${user.userid}">删除</a> </td>
+    </tr><br/>
+    <tr>
+        <td><a href="add">新增</a>
+        </td></tr>
+</table>
+
+</body>
+</html>
